@@ -1,0 +1,6 @@
+                                        Results                                         
+         Method                x            y      calls to f(x, y) calls to grad f(x,y) 
+Coordinate descent method -3.80892e-01 9.14578e-01               87                    0 
+    Step splitting method -3.80887e-01 9.14579e-01              161                   11 
+        Const step method -3.80880e-01 9.14572e-01                0               125512 
+    Diverge series method -3.80888e-01 9.14569e-01             7020                 7020 
