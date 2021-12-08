@@ -3,6 +3,7 @@
 #include <Settings.h>
 #include <Vector.h>
 
+#include <iostream>
 #include <sstream>
 #include <iomanip>
 #include <vector>
@@ -40,21 +41,15 @@ protected:
 	void ToString(std::vector<std::string>& values,
 			const Vector& vec, const Vector& prev) const
 	{
-		auto curX = ConvertToString(vec.x);
-		auto curY = ConvertToString(vec.y);
-
-		auto prevX = ConvertToString(prev.x);
-		auto prevY = ConvertToString(prev.y);
-
-		if (curX == prevX && curY == prevY)
+		if (vec.x == prev.x && vec.y == prev.y)
 		{
 			values.push_back("-//-");
 			values.push_back("-//-");
 		}
 		else
 		{
-			ToString(values, vec.x);
-			ToString(values, vec.y);
+			ToString(values, vec.x, prev.x);
+			ToString(values, vec.y, prev.y);
 		}
 	}
 
@@ -79,12 +74,12 @@ protected:
 	}
 
 	std::string ConvertToString(double number,
-			bool showSign = false) const
+			bool isDelta = false) const
 	{
 		std::stringstream str;
 
-		if (showSign)
-			str << std::showpos;
+		if (isDelta)
+			str << std::showpos << "d";
 		str << std::setprecision(precision) << std::scientific
 			<< number;
 
