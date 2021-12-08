@@ -54,7 +54,7 @@ public:
 	bool IsEnded() const override
 	{
 		auto dp = Vector::Dot(currentGrad, nextGrad);
-		return dp < 0 && alpha <= eps;
+		return dp <= 0 && alpha <= eps;
 	}
 
 	std::shared_ptr<IState> GetState() const override
