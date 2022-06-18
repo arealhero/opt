@@ -1,0 +1,4 @@
+                                      Results                                      
+        Method              x          y      calls to f(x, y) calls to grad f(x,y) 
+External penalty method 2.5203e-01 1.3359e+00              655                    0 
+Internal penalty method 2.7099e-01 1.3155e+00             2712                    0 
