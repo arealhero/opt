@@ -3,3 +3,6 @@ second/findroot
 
 build/
 
+# Vim swap files
+*.swp
+
